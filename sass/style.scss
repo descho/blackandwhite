@@ -1,0 +1,181 @@
+/*!
+Theme Name: blackandwhite
+Author: Desislava Chongarova
+*/
+
+@import "compass/reset";
+
+// 
+// Variables
+//
+
+$main-text: #131310;
+$main-bg: #f2f2f2;
+//$header-text: $main-bg; // dark header
+//$header-bg: $main-text; // dark header
+$header-text: $main-text; // light header
+$header-bg: #eee; // light header
+
+$hr-color: #ddd;
+$header-height: 44px;
+
+$break-medium: 560px;
+$break-small: 460px;
+
+body {
+	font-family: 'Roboto', sans-serif;
+	color: $main-text;
+}
+p {
+	line-height: 1.4;
+	margin-bottom: 1em;
+	font-weight: 300;
+}
+a {
+	text-decoration: none;
+	color: $main-text;
+}
+strong {
+	font-weight: 500;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+}
+hr {
+	margin: 1em 0;
+	border-style: none;
+	border-top: 0;
+	border-bottom: 1px solid $hr-color;
+}
+.site-header {
+	height: $header-height;
+	background-color: $header-bg;
+	padding: 0 1em;
+	margin-bottom: 1em;
+	a {
+		color: $header-text;
+	}
+}
+.site-title {
+	float: left;
+	font-size: 1em;
+	line-height: $header-height;
+	font-weight: 300;
+	letter-spacing: 0.04em;
+	&:hover {
+		text-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+	}
+}
+.main-nav {
+	float: right;
+	li {
+		display: inline;
+		text-transform: uppercase;
+		font-size: 0.75em;
+		font-weight: 300;
+		margin-left: 4px;
+	}
+	a {
+		padding: 5px 10px;
+//		background-color: rgba(255, 255, 255, 0.1); //dark header
+		background-color: rgba(0, 0, 0, 0.05); //light header
+		border-radius: 3px;
+		line-height: $header-height;
+		color: darken($header-text, 10%);
+		&:hover {
+			color: $header-text;
+//			background-color: rgba(255, 255, 255, 0.2); //dark header
+			background-color: rgba(0, 0, 0, 0.1); //light header
+		}
+	}
+}
+.content-area {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+.page {
+	.content-area {
+		text-align: left;
+		padding: 0 1em;
+		@media (min-width: $break-medium) and (min-height: $break-small) {
+			padding-top: 3em;
+		}
+	}
+	hr {
+		@media (min-width: $break-medium) and (min-height: $break-small) {
+			margin-bottom: 2em;
+		}
+	}
+	.entry-content {
+		@media (min-width: $break-medium) {
+			width: 65%;
+			float: left;
+		}
+	}
+	.entry-thumbnail {
+		@media (min-width: $break-medium) {
+			width: 32%;
+			float: right;
+		}
+	}
+}
+.site-content {
+	position: relative;
+	display: inline-block;
+}
+.post {
+	margin-bottom: 1em;
+}
+.featured-image {
+	margin-bottom: 1em;
+	max-height: 500px;
+}
+.entry-title, .post-date {
+	text-transform: uppercase;
+}
+.entry-title {
+	margin-bottom: 0.4em;
+}
+.post-date {
+	font-style: italic;
+	font-size: 0.75em;
+	font-weight: 300;
+	color: lighten($main-text, 20%);
+}
+.post-nav {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.nav-previous, .nav-next {
+	width: 30%;
+	height: 100%;
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+	.meta-nav {
+		position: absolute;
+		bottom: 2.4em;;
+	}
+} 
+.nav-previous {
+	float: left;
+	.meta-nav {
+		left: 1em;
+	}
+}
+.nav-next {
+	float: right;
+	.meta-nav {
+		right: 1em;
+	}
+}
+
