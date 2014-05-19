@@ -6,14 +6,14 @@ function theme_styles() {
 //	wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic,700italic&subset=latin,cyrillic' );
 
 }
+add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
 // Load the Theme JS
-//function theme_js() {
+function theme_js() {
 //	wp_enqueue_script( 'retina', get_template_directory_uri() . '/js/retina.js',  array('jquery'), '', true );
-//}
-//add_action( 'wp_enqueue_scripts', 'theme_js' );
-
-add_action( 'wp_enqueue_scripts', 'theme_styles' );
+	wp_enqueue_script( 'keboard_nav', get_template_directory_uri() . '/js/keyboard-nav.js',  array('jquery'), '', true );
+}
+add_action( 'wp_enqueue_scripts', 'theme_js' );
 
 // Enable cutom menus
 add_theme_support( 'menus' );
