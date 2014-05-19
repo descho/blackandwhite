@@ -1,5 +1,5 @@
 ( function( $ ) {
-	$( document ).on( 'keydown.blackandwhite', function( e ) {
+	$( document ).on( 'keydown', function( e ) {
 		var url = false;
 
 		// Left arrow key code
@@ -11,8 +11,8 @@
 			url = $( '.nav-next a' ).attr( 'href' );
 		}
 
-		if ( url && ( !$( 'textarea, input' ).is( ':focus' ) ) ) {
+		if ( url && !$( e.target ).is( 'textarea, input' ) ) {
 			window.location = url;
 		}
-	});
+	} );
 } )( jQuery );
